@@ -810,10 +810,10 @@
     node-fetch "^2.2.0"
     typescript "^3.1.4"
 
-"@dailybruin/lux@1.5.6":
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/@dailybruin/lux/-/lux-1.5.6.tgz#54dce91df7f136aad5cc8a4ed297eae153a0e15f"
-  integrity sha512-MhRSSakTi3tA3hHPyK8+sA6hE0vcxvb4sNp+e48X01suKFfORQNDXKi/VBgWTEWWP4MWZGlrSDEeTG+wB+EEKQ==
+"@dailybruin/lux@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@dailybruin/lux/-/lux-1.7.0.tgz#bfbd3c8cc25f4746b29471a02e89a233d97f2377"
+  integrity sha512-nXCA0H7R3J8D/m9QjVhj12BTFdr74JaSPzNpYlVjAeRFKU7A8eSm6JtpUgYlteF8N+Bf6SYQDzzqdO+fuTWFJg==
   dependencies:
     "@types/react" "16.4.18"
     "@types/react-dom" "16.0.9"
@@ -822,6 +822,7 @@
     emotion "^9.2.12"
     emotion-server "^9.2.12"
     gatsby-plugin-emotion "^2.0.5"
+    lodash.uniq "^4.5.0"
     plyr "^3.4.4"
     react "16.5.2"
     react-dom "16.5.2"
