@@ -1,11 +1,10 @@
 const slugify = require('slugify')
 
-const siteName = 'SITE_NAME'
+const siteName = 'on-demand-on-campus'
 const description = 'SITE_DESCRIPTION'
 const image =
   'https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg'
-const year = 'CURRENT_YEAR'
-const trackingId = 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID'
+const year = '2018'
 
 const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
 
@@ -47,7 +46,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId,
+        trackingId: 'UA-28181852-23',
         head: false,
         anonymize: true,
       },
