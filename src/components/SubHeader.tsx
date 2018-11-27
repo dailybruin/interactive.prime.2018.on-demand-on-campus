@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
-import colors from '../utils/colors'
+import colors from '../global/colors'
 import slugify from 'slugify'
 
 interface SubHeaderProps {

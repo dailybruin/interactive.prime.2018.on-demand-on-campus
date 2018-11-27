@@ -3,9 +3,10 @@ import { css } from 'react-emotion'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import './slick-styles.css'
 
-import FancyCard from './FancyCard'
-import FancyIntroCard from './FancyIntroCard'
+import FancyCard from '../FancyCard'
+import FancyIntroCard from '../FancyIntroCard'
 
 interface DropdownCarouselSection {
   title: string
@@ -156,28 +157,32 @@ export default class DropdownCarousel extends React.Component<
   render() {
     return (
       <div
-      // className={css`
-      //   top: 0;
-      //   & *:focus {
-      //     outline: none;
-      //   }
-      // `}
+        className={css`
+          /* background-color: black; */
+          width: 90%;
+          margin: 0 auto;
+          color: black;
+        `}
       >
         <Slider
-          {...{
-            arrows: true,
-            dots: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            nextArrow: <SliderNextArrow />,
-            prevArrow: <SliderPrevArrow />,
-          }}
-          className={css`
-            margin: 0 auto;
-            width: 90%;
-          `}
+          dots={true}
+          slidesToShow={3}
+          slidesToScroll={1}
+          infinite={false}
+          responsive={[
+            {
+              breakpoint: 900,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ]}
         >
           <div key={-1} className={cardPadderClass}>
             <FancyIntroCard
@@ -189,13 +194,13 @@ export default class DropdownCarousel extends React.Component<
           </div>
           {this.renderCards()}
         </Slider>
-        <div
+        {/* <div
           className={css`
             display: relative;
           `}
         >
           {this.renderDropdowns()}
-        </div>
+        </div> */}
       </div>
     )
   }
