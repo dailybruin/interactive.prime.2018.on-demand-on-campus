@@ -18,6 +18,7 @@ const FancyIntroCard = (props: FancyIntroCardProps) => (
         ${props.gradientBottomColor}
       );
       padding: 0.3rem;
+      margin: 0 1rem;
     `}
     onClick={props.onClick}
   >

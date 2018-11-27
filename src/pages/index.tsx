@@ -12,7 +12,8 @@ import {
 } from '@dailybruin/lux'
 import SubHeader from '../components/SubHeader'
 import DropdownCarousel from '../components/DropdownCarousel'
-import { Doughnut } from 'react-chartjs-2'
+import Doughnut from '../components/Doughnut'
+import HorizontalBar from '../components/HorizontalBar'
 
 export const query = graphql`
   query IndexQuery {
@@ -41,37 +42,46 @@ export const query = graphql`
       reasonForPreferredPlatform {
         label
         students
+        color
       }
       favoriteGenre {
         label
         students
+        color
       }
       hoursPerWeek {
         label
         students
+        color
       }
       streamedWhileAtUCLA {
         label
         students
+        color
       }
       favoriteSeriesToStream {
         label
         students
+        color
       }
     }
   }
 `
 
 const IndexPage = ({ data }) => {
-  const chartData = {
-    labels: data.data.preferredStreamingPlatform.map(p => p.label),
-    datasets: [
-      {
-        data: data.data.preferredStreamingPlatform.map(p => p.students),
-        backgroundColor: data.data.preferredStreamingPlatform.map(p => p.color),
-      },
-    ],
-  }
+  const chartData = {}
+  Object.keys(data.data).forEach(key => {
+    chartData[key] = {
+      labels: data.data[key].map(p => p.label),
+      datasets: [
+        {
+          data: data.data[key].map(p => p.students),
+          backgroundColor: data.data[key].map(p => p.color),
+        },
+      ],
+    }
+  })
+  console.log(chartData)
 
   return (
     <div>
@@ -85,16 +95,7 @@ const IndexPage = ({ data }) => {
           {
             title: 'Preferred Streaming Platform',
             content: (
-              <div>
-                <Doughnut
-                  data={chartData}
-                  options={{
-                    legend: {
-                      position: 'left',
-                    },
-                  }}
-                />
-              </div>
+              <Doughnut data={chartData['reasonForPreferredPlatform']} />
             ),
             topColor: '#E7BEFA',
             bottomColor: '#8AACF7',
@@ -102,34 +103,34 @@ const IndexPage = ({ data }) => {
           {
             title: 'Reason for Preferred Platform',
             content: (
-              <div>
-                TEST TEST TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST TEST
-              </div>
+              <HorizontalBar data={chartData['reasonForPreferredPlatform']} />
             ),
             topColor: '#B3F2F6',
             bottomColor: '#5C9DE9',
           },
           {
             title: 'Favorite Genre to Stream',
-            content: <div>TEST TEST TEST 333</div>,
+            content: <HorizontalBar data={chartData['favoriteGenre']} />,
             topColor: '#FBC6B6',
             bottomColor: '#F57DC5',
           },
           {
             title: 'Hours Per Week Using Service',
-            content: <div>TEST TEST TEST 333</div>,
+            content: <Doughnut data={chartData['hoursPerWeek']} />,
             topColor: '#DEFBD6',
             bottomColor: '#4FDACA',
           },
           {
             title: 'Streamed While at UCLA',
-            content: <div>TEST TEST TEST 333</div>,
+            content: <HorizontalBar data={chartData['streamedWhileAtUCLA']} />,
             topColor: '#D4DAF9',
             bottomColor: '#AA7BF8',
           },
           {
             title: 'Favorite Series to Stream',
-            content: <div>TEST TEST TEST 333</div>,
+            content: (
+              <HorizontalBar data={chartData['favoriteSeriesToStream']} />
+            ),
             topColor: '#F9D6BC',
             bottomColor: '#F98078',
           },
@@ -150,7 +151,10 @@ const IndexPage = ({ data }) => {
         content={data.article.content}
         customTypeComponentMapping={{ subheading: SubHeader }}
       />
-      <Footer developers="Nathan Smith" copyrightYear={2018} />
+      <Footer
+        developers={['Nathan Smith', 'Kevin Qian']}
+        copyrightYear={2018}
+      />
     </div>
   )
 }
