@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-interface IFancyIntroCardProps {
+interface FancyIntroCardProps {
   title: string
   caption: string
   gradientTopColor: string
@@ -9,20 +9,17 @@ interface IFancyIntroCardProps {
   onClick?: (event?: React.MouseEvent<HTMLElement>) => void
 }
 
-const FancyIntroCard: React.SFC<IFancyIntroCardProps> = ({
-  title,
-  caption,
-  gradientTopColor,
-  gradientBottomColor,
-  onClick = () => {},
-}) => (
+const FancyIntroCard = (props: FancyIntroCardProps) => (
   <div
     className={css`
       border-radius: 1rem;
-      background: linear-gradient(${gradientTopColor}, ${gradientBottomColor});
+      background: linear-gradient(
+        ${props.gradientTopColor},
+        ${props.gradientBottomColor}
+      );
       padding: 0.3rem;
     `}
-    onClick={onClick}
+    onClick={props.onClick}
   >
     <div
       className={css`
@@ -39,14 +36,14 @@ const FancyIntroCard: React.SFC<IFancyIntroCardProps> = ({
           font-family: Arial;
         `}
       >
-        {title}
+        {props.title}
       </div>
       <div
         className={css`
           font-family: Arial;
         `}
       >
-        {caption}
+        {props.caption}
       </div>
     </div>
   </div>

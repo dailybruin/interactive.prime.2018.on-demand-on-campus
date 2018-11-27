@@ -2,7 +2,7 @@ import * as React from 'react'
 import { css } from 'react-emotion'
 import WaveImage from '../images/wave.png'
 
-interface IFancyCardProps {
+interface FancyCardProps {
   title: string
   gradientTopColor: string
   gradientBottomColor: string
@@ -10,30 +10,24 @@ interface IFancyCardProps {
   onClick?: (event?: React.MouseEvent<HTMLElement>) => void
 }
 
-const FancyCard: React.SFC<IFancyCardProps> = ({
-  title,
-  gradientTopColor,
-  gradientBottomColor,
-  isSelected = false,
-  onClick = () => {},
-}) => (
+const FancyCard = (props: FancyCardProps) => (
   <div
     className={css`
       box-sizing: border-box; // |border-box|initial|inherit;
       border-radius: 1.5rem;
-      ${isSelected ? 'border: 5px #E9EEFF solid;' : ''};
+      ${props.isSelected ? 'border: 5px #E9EEFF solid;' : ''};
     `}
   >
     <div
       className={css`
         background: linear-gradient(
-          ${gradientTopColor},
-          ${gradientBottomColor}
+          ${props.gradientTopColor},
+          ${props.gradientBottomColor}
         );
         border-radius: 1rem;
         padding: 1.5rem;
       `}
-      onClick={onClick}
+      onClick={props.onClick}
     >
       <div
         className={css`
@@ -46,7 +40,7 @@ const FancyCard: React.SFC<IFancyCardProps> = ({
           max-width: 200px;
         `}
       >
-        {title}
+        {props.title}
       </div>
       <img
         className={css`
@@ -54,7 +48,6 @@ const FancyCard: React.SFC<IFancyCardProps> = ({
           opacity: 0.5;
         `}
         src={WaveImage}
-        alt="wave image"
       />
     </div>
   </div>

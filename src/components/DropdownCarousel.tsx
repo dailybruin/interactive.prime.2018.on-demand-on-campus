@@ -64,25 +64,12 @@ const cardPadderClass = css`
   padding: 0 1rem;
 `
 
-const hiddenDropdownClass = css`
-  opacity: 0;
-  transition: all linear 0.3s;
-`
-
-const shownDropdownClass = css`
-  opacity: 1;
-  transition: all linear 0.3s;
-`
-
 export default class DropdownCarousel extends React.Component<
   DropdownCarouselProps,
   DropdownCarouselState
 > {
-  constructor(props) {
-    super(props)
-    this.state = {
-      current: -1,
-    }
+  state = {
+    current: -1,
   }
 
   renderCards = () => {
@@ -109,9 +96,10 @@ export default class DropdownCarousel extends React.Component<
     return this.props.sections.map(({ content }, i) => (
       <div
         key={i}
-        className={
-          this.state.current === i ? shownDropdownClass : hiddenDropdownClass
-        }
+        className={css`
+          transition: all linear 0.3s;
+          opacity: ${this.state.current === i ? 1 : 0};
+        `}
       >
         <div
           className={css`
