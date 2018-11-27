@@ -1,118 +1,11 @@
 import * as React from 'react'
-import { css } from 'emotion'
-import WaveImage from '../images/wave.png'
+import { css } from 'react-emotion'
 import Slider from 'react-slick'
-import '../../node_modules/slick-carousel/slick/slick.css'
-import '../../node_modules/slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-interface IFancyCardProps {
-  title: string
-  gradientTopColor: string
-  gradientBottomColor: string
-  isSelected?: boolean
-  onClick?: (event?: React.MouseEvent<HTMLElement>) => void
-}
-
-export const FancyCard: React.SFC<IFancyCardProps> = ({
-  title,
-  gradientTopColor,
-  gradientBottomColor,
-  isSelected = false,
-  onClick = () => {},
-}) => (
-  <div
-    className={css`
-      box-sizing: border-box; // |border-box|initial|inherit;
-      border-radius: 1.5rem;
-      ${isSelected ? 'border: 5px #E9EEFF solid;' : ''};
-    `}
-  >
-    <div
-      className={css`
-        background: linear-gradient(
-          ${gradientTopColor},
-          ${gradientBottomColor}
-        );
-        border-radius: 1rem;
-        padding: 1.5rem;
-      `}
-      onClick={onClick}
-    >
-      <div
-        className={css`
-          margin: 0 0 auto auto;
-          color: white;
-          font-family: Arial;
-          text-align: right;
-          font-size: 1.2rem;
-          font-weight: bold;
-          max-width: 200px;
-        `}
-      >
-        {title}
-      </div>
-      <img
-        className={css`
-          margin-bottom: 0;
-          opacity: 0.5;
-        `}
-        src={WaveImage}
-        alt="wave image"
-      />
-    </div>
-  </div>
-)
-
-interface IFancyIntroCardProps {
-  title: string
-  caption: string
-  gradientTopColor: string
-  gradientBottomColor: string
-  onClick?: (event?: React.MouseEvent<HTMLElement>) => void
-}
-
-export const FancyIntroCard: React.SFC<IFancyIntroCardProps> = ({
-  title,
-  caption,
-  gradientTopColor,
-  gradientBottomColor,
-  onClick = () => {},
-}) => (
-  <div
-    className={css`
-      border-radius: 1rem;
-      background: linear-gradient(${gradientTopColor}, ${gradientBottomColor});
-      padding: 0.3rem;
-    `}
-    onClick={onClick}
-  >
-    <div
-      className={css`
-        background-color: white;
-        border-radius: 0.8rem;
-        padding: 1.5rem;
-      `}
-    >
-      <div
-        className={css`
-          text-align: center;
-          color: lightgray;
-          font-size: 1.5rem;
-          font-family: Arial;
-        `}
-      >
-        {title}
-      </div>
-      <div
-        className={css`
-          font-family: Arial;
-        `}
-      >
-        {caption}
-      </div>
-    </div>
-  </div>
-)
+import FancyCard from './FancyCard'
+import FancyIntroCard from './FancyIntroCard'
 
 interface IDropdownCarouselSection {
   title: string
@@ -181,7 +74,7 @@ const shownDropdownClass = css`
   transition: all linear 0.3s;
 `
 
-export class DropdownCarousel extends React.Component<
+export default class DropdownCarousel extends React.Component<
   IDropdownCarouselProps,
   IDropdownCarouselState
 > {

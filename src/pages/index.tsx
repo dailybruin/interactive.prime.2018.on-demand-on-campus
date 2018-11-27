@@ -8,11 +8,9 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
-import {
-  FancyCard,
-  FancyIntroCard,
-  DropdownCarousel,
-} from '../components/Fancy-Card'
+import FancyCard from '../components/FancyCard'
+import FancyIntroCard from '../components/FancyIntroCard'
+import DropdownCarousel from '../components/DropdownCarousel'
 import { Doughnut } from 'react-chartjs-2'
 
 export const query = graphql`
