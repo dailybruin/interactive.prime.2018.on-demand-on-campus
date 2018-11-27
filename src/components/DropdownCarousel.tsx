@@ -7,20 +7,20 @@ import 'slick-carousel/slick/slick-theme.css'
 import FancyCard from './FancyCard'
 import FancyIntroCard from './FancyIntroCard'
 
-interface IDropdownCarouselSection {
+interface DropdownCarouselSection {
   title: string
   content: React.ReactNode
   topColor?: string
   bottomColor?: string
 }
 
-interface IDropdownCarouselProps {
+interface DropdownCarouselProps {
   intro: string
   introCaption: string
-  sections: IDropdownCarouselSection[]
+  sections: DropdownCarouselSection[]
 }
 
-interface IDropdownCarouselState {
+interface DropdownCarouselState {
   current: number
 }
 
@@ -75,8 +75,8 @@ const shownDropdownClass = css`
 `
 
 export default class DropdownCarousel extends React.Component<
-  IDropdownCarouselProps,
-  IDropdownCarouselState
+  DropdownCarouselProps,
+  DropdownCarouselState
 > {
   constructor(props) {
     super(props)
@@ -169,14 +169,12 @@ export default class DropdownCarousel extends React.Component<
   render() {
     return (
       <div
-        className={css`
-          position: -webkit-sticky;
-          position: sticky;
-          top: 0;
-          & *:focus {
-            outline: none;
-          }
-        `}
+      // className={css`
+      //   top: 0;
+      //   & *:focus {
+      //     outline: none;
+      //   }
+      // `}
       >
         <Slider
           {...{
