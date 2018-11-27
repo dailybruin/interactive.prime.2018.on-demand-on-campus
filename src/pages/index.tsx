@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { Article, CoverPhoto, Footer, Head } from '@dailybruin/lux'
+import { Doughnut } from 'react-chartjs-2'
 
 export const query = graphql`
   query {
@@ -21,6 +22,18 @@ export const query = graphql`
     }
   }
 `
+
+const chartData = {
+  labels: ['Red', 'Green', 'Yellow'],
+  datasets: [
+    {
+      data: [300, 50, 100],
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+    },
+  ],
+}
+
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
@@ -31,6 +44,7 @@ const IndexPage = ({ data }) => (
       xPosition="start"
       yPosition="center"
     />
+    <Doughnut data={chartData} />
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
