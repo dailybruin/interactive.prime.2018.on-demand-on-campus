@@ -74,7 +74,7 @@ export default class DropdownCarousel extends React.Component<
 
   renderCards = () => {
     return this.props.sections.map(
-      ({ title, topColor = '#E7BEFA', bottomColor = '#8AACF7' }, i) => (
+      ({ title, topColor = '#000', bottomColor = '#000' }, i) => (
         <div key={i} className={cardPadderClass}>
           <FancyCard
             title={title}

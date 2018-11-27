@@ -55,24 +55,41 @@ const IndexPage = ({ data }) => (
       }
       sections={[
         {
-          title: 'TEST TEST TEST 111',
+          title: 'Preferred Streaming Platform',
           content: <div>TEST TEST TEST 111</div>,
+          topColor: '#E7BEFA',
+          bottomColor: '#8AACF7',
         },
         {
-          title: 'TEST TEST TEST 222',
+          title: 'Reason for Preferred Platform',
           content: (
             <div>
               TEST TEST TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST TEST
-              TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST
-              TEST TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST TEST TEST
-              222TEST TEST TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST TEST
-              TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST TEST TEST 222TEST
-              TEST TEST 222TEST TEST TEST 222
             </div>
           ),
+          topColor: '#B3F2F6',
+          bottomColor: '#5C9DE9',
         },
         {
-          title: 'TEST TEST TEST 333',
+          title: 'Favorite Genre to Stream',
+          content: <div>TEST TEST TEST 333</div>,
+          topColor: '#FBC6B6',
+          bottomColor: '#F57DC5',
+        },
+        {
+          title: 'Hours Per Week Using Service',
+          content: <div>TEST TEST TEST 333</div>,
+          topColor: '#DEFBD6',
+          bottomColor: '#4FDACA',
+        },
+        {
+          title: 'Streamed While at UCLA',
+          content: <div>TEST TEST TEST 333</div>,
+          topColor: '#D4DAF9',
+          bottomColor: '#AA7BF8',
+        },
+        {
+          title: 'Favorite Series to Stream',
           content: <div>TEST TEST TEST 333</div>,
           topColor: '#F9D6BC',
           bottomColor: '#F98078',
