@@ -8,6 +8,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import SubHeader from '../components/SubHeader'
 import FancyCard from '../components/FancyCard'
 import FancyIntroCard from '../components/FancyIntroCard'
 import DropdownCarousel from '../components/DropdownCarousel'
@@ -87,7 +88,8 @@ const IndexPage = ({ data }) => (
       yPosition={YPosition.Center}
     />
     <Doughnut data={chartData} />
-    <Article dropcap={true} content={data.kerckhoffArticle.content} />
+    <SubHeader text="RISE OF STREAMING" />
+    <Article content={data.kerckhoffArticle.content} />
     <FancyCard
       title={'TEST TEST TEST TEST'}
       gradientTopColor={'#E7BEFA'}
