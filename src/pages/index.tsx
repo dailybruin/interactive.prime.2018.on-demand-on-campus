@@ -95,7 +95,7 @@ const IndexPage = ({ data }) => {
           {
             title: 'Preferred Streaming Platform',
             content: (
-              <Doughnut data={chartData['reasonForPreferredPlatform']} />
+              <Doughnut data={chartData['preferredStreamingPlatform']} />
             ),
             topColor: '#E7BEFA',
             bottomColor: '#8AACF7',
