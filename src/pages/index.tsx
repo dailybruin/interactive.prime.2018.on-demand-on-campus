@@ -1,11 +1,18 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { Article, CoverPhoto, Footer, Head } from '@dailybruin/lux'
+import {
+  Article,
+  CoverPhoto,
+  Footer,
+  Head,
+  XPosition,
+  YPosition,
+} from '@dailybruin/lux'
 import {
   FancyCard,
   FancyIntroCard,
   DropdownCarousel,
-} from '../components/fancycard'
+} from '../components/Fancy-Card'
 import { Doughnut } from 'react-chartjs-2'
 
 export const query = graphql`
@@ -78,8 +85,8 @@ const IndexPage = ({ data }) => (
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
       imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
-      xPosition="start"
-      yPosition="center"
+      xPosition={XPosition.Left}
+      yPosition={YPosition.Center}
     />
     <Doughnut data={chartData} />
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
