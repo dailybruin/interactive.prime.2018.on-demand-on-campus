@@ -23,3 +23,5 @@ To build:
 ```
 yarn build
 ```
+## Netlify link
+https://heuristic-northcutt-58ddce.netlify.com/
