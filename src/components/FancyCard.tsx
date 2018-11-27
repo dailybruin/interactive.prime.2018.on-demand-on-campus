@@ -13,7 +13,7 @@ interface FancyCardProps {
 const FancyCard = (props: FancyCardProps) => (
   <div
     className={css`
-      box-sizing: border-box; // |border-box|initial|inherit;
+      box-sizing: border-box;
       border-radius: 1.5rem;
       ${props.isSelected ? 'border: 5px #E9EEFF solid;' : ''};
     `}

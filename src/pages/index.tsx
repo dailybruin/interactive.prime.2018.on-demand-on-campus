@@ -59,7 +59,11 @@ const IndexPage = ({ data }) => (
       sections={[
         {
           title: 'Preferred Streaming Platform',
-          content: <div>TEST TEST TEST 111</div>,
+          content: (
+            <div>
+              TEST TEST TEST 111 <Doughnut data={chartData} />
+            </div>
+          ),
           topColor: '#E7BEFA',
           bottomColor: '#8AACF7',
         },
@@ -110,7 +114,6 @@ const IndexPage = ({ data }) => (
         color: ${colors.blue};
       `}
     />
-    <Doughnut data={chartData} />
     <Article
       content={data.kerckhoffArticle.content}
       customTypeComponentMapping={{ subheading: SubHeader }}

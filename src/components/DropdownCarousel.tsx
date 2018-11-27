@@ -103,7 +103,6 @@ export default class DropdownCarousel extends React.Component<
       >
         <div
           className={css`
-            position: absolute;
             width: 100%;
             background-color: white;
           `}
