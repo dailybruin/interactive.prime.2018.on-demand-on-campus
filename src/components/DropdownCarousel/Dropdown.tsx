@@ -28,6 +28,9 @@ class Dropdown extends React.Component<DropdownProps> {
             border: 5px solid #e9eeff;
             border-radius: 1rem;
             padding: 40px 70px;
+            @media (max-width: 800px) {
+              padding: 1rem;
+            }
           `}
         >
           <div
@@ -35,6 +38,10 @@ class Dropdown extends React.Component<DropdownProps> {
               position: absolute;
               top: 36px;
               right: 36px;
+              @media (max-width: 800px) {
+                top: 20px;
+                right: 20px;
+              }
               color: ${colors.blue};
               cursor: pointer;
               :hover {

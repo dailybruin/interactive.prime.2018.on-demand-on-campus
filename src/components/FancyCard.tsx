@@ -27,6 +27,7 @@ const FancyCard = (props: FancyCardProps) => (
         );
         border-radius: 1rem;
         padding: 1.5rem;
+        padding: 0.4rem;
       `}
       onClick={props.onClick}
     >
