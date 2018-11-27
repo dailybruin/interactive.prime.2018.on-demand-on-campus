@@ -11,7 +11,7 @@ const SubHeader = (props: SubHeaderProps) => (
   <h2
     className={css`
       color: ${colors.blue};
-      margin: 70px auto 42px;
+      margin: 2.5rem auto 1.4rem;
       max-width: 600px;
     `}
     id={slugify(props.name)}

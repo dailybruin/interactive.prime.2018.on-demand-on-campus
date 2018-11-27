@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { css } from 'react-emotion'
+import colors from '../utils/colors'
 import {
   Article,
   CoverPhoto,
@@ -26,6 +28,7 @@ export const query = graphql`
     kerckhoffArticle {
       headline
       author
+      coverphoto
       content {
         type
         value
@@ -100,28 +103,17 @@ const IndexPage = ({ data }) => (
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
-      imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
-      xPosition={XPosition.Left}
+      imageURL={data.kerckhoffArticle.coverphoto}
+      xPosition={XPosition.Right}
       yPosition={YPosition.Center}
+      style={css`
+        color: ${colors.blue};
+      `}
     />
     <Doughnut data={chartData} />
     <Article
       content={data.kerckhoffArticle.content}
       customTypeComponentMapping={{ subheading: SubHeader }}
-    />
-    <FancyCard
-      title={'TEST TEST TEST TEST'}
-      gradientTopColor={'#E7BEFA'}
-      gradientBottomColor={'#8AACF7'}
-      isSelected={true}
-    />
-    <FancyIntroCard
-      title={'STATISTICS'}
-      caption={
-        'A tiny blurb explaining the survey and what this panel is probably something explaining about how you can scroll/view the rest of this panel wheeeee'
-      }
-      gradientTopColor={'#E7BEFA'}
-      gradientBottomColor={'#8AACF7'}
     />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
