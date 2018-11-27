@@ -88,8 +88,10 @@ const IndexPage = ({ data }) => (
       yPosition={YPosition.Center}
     />
     <Doughnut data={chartData} />
-    <SubHeader text="RISE OF STREAMING" />
-    <Article content={data.kerckhoffArticle.content} />
+    <Article
+      content={data.kerckhoffArticle.content}
+      customTypeComponentMapping={{ subheading: SubHeader }}
+    />
     <FancyCard
       title={'TEST TEST TEST TEST'}
       gradientTopColor={'#E7BEFA'}
