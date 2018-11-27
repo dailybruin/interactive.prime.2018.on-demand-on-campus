@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 import colors from '../utils/colors'
+import slugify from 'slugify'
 
 interface SubHeaderProps {
-  text: string
+  name: string
 }
 
 const SubHeader = (props: SubHeaderProps) => (
@@ -13,8 +14,9 @@ const SubHeader = (props: SubHeaderProps) => (
       margin: 70px auto 42px;
       max-width: 600px;
     `}
+    id={slugify(props.name)}
   >
-    {props.text.toUpperCase()}
+    {props.name.toUpperCase()}
   </h2>
 )
 
