@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => {
       <DropdownCarousel
         intro={'STATISTICS'}
         introCaption={
-          'A tiny blurb explaining the survey and what this panel is probably something explaining about how you can scroll/view the rest of this panel wheeeee'
+          'How popular is Netflix over Hulu and Amazon Prime Video? How often do students stream their favorite shows? Scroll through to review the results of the 120-student survey.'
         }
         sections={[
           {
