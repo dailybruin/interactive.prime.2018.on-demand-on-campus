@@ -4,13 +4,14 @@ import styled, { css } from 'react-emotion'
 import colors from '../global/colors'
 import {
   Article,
-  CoverPhoto,
   Footer,
   Head,
   XPosition,
   YPosition,
   Header,
+  Headline,
 } from '@dailybruin/lux'
+import HoverCoverPhoto from '../components/HoverCoverPhoto'
 import SubHeader from '../components/SubHeader'
 import DropdownCarousel from '../components/DropdownCarousel'
 import Doughnut from '../components/Doughnut'
@@ -94,7 +95,7 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <div>
+    <div className={css`li { display: none; }`}>
       <Head {...data.site.siteMetadata} />
       <Header
         title="On Demand On Campus"
@@ -167,26 +168,40 @@ const IndexPage = ({ data }) => {
           },
         ]}
       />
-
-      <CoverPhoto
-        headline={data.article.headline}
-        authors={data.article.author}
-        imageURL={data.article.coverphoto}
-        xPosition={XPosition.Right}
-        yPosition={YPosition.Center}
-        textColor={colors.blue}
-        style={css`
-          > div {
-            background-color: rgba(255, 255, 255, 0.9);
-            margin-right: 0;
-            padding: 1rem;
-            padding-right: 3rem;
-            border-radius: 32px 0 0 32px;
-            border: 4px solid ${colors.blue};
-            border-right: 0;
-          }
-        `}
+      <HoverCoverPhoto
+        headline={ data.article.headline }
+        baseImageURL={ data.article.coverphoto }
+        hoverImageURL="https://assets.dailybruin.com/images/interactive.prime.2018.bruin-binging2/prime.illo.JLS-21f91159663efc996d1a2d951c1032ef.png"
+        authors={ data.article.author }
       />
+      {/* <div className={css`
+        div:hover div {
+          opacity: 0;
+          transition: opacity 0.75s;
+        }
+      `}>
+        <CoverPhoto
+          headline={data.article.headline}
+          authors={data.article.author}
+          imageURL={data.article.coverphoto}
+          xPosition={XPosition.Right}
+          yPosition={YPosition.Center}
+          textColor={colors.blue}
+          style={css`
+            > div {
+              background-color: rgba(255, 255, 255, 0.9);
+              margin-right: 0;
+              padding: 1rem;
+              padding-right: 3rem;
+              border-radius: 32px 0 0 32px;
+              border: 4px solid ${colors.blue};
+              border-right: 0;
+              opacity: 100;
+              transition: 0.75s;
+            }
+          `}
+        />
+      </div> */}
       <Article
         dropcap={true}
         content={data.article.content}
