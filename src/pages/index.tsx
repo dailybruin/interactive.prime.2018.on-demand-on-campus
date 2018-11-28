@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { css } from 'react-emotion'
 import colors from '../global/colors'
 import {
@@ -9,6 +9,7 @@ import {
   Head,
   XPosition,
   YPosition,
+  Navbar
 } from '@dailybruin/lux'
 import SubHeader from '../components/SubHeader'
 import DropdownCarousel from '../components/DropdownCarousel'
@@ -83,9 +84,29 @@ const IndexPage = ({ data }) => {
   })
   console.log(chartData)
 
+  const navStyle = css`
+          h2{
+            margin-bottom: 0px;
+          }
+          z-index: 1;
+          border: solid 3px #A0B2D8;
+          border-radius: 25px;
+          `
+  const rise  = <Link to={"#Rise-of-Streaming"}>Rise of Streaming</Link>
+  const bruin = <Link to="#Bruin-Binging">Bruin Binging</Link>
+  const social = <Link to="#Social-Streaming">Social Streaming</Link>
+  const cutting = <Link to="#Cutting-the-Cords">Cutting the Cords</Link>
+  const links = [rise, bruin, social, cutting]
+  const linkStyle = css`
+                      color: #A0B2D8;
+                      font-family: Heebo;
+                      text-transform: uppercase;
+                      `
+  
   return (
     <div>
       <Head {...data.site.siteMetadata} />
+      <Navbar style={navStyle}title={"ON DEMAND ON CAMPUS"} showLogo={false} sticky={true} links={links} linkStyle={linkStyle}></Navbar>
       <DropdownCarousel
         intro={'STATISTICS'}
         introCaption={
