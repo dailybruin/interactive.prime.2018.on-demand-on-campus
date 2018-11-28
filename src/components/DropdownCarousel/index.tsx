@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { css } from 'react-emotion'
+import { css } from 'react-emotion'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -52,22 +52,28 @@ export default class DropdownCarousel extends React.Component<
   }
 
   renderDropdowns = () => {
-    return this.props.sections.map((section, i) => (
-      <Dropdown
-        key={i}
-        heading={section.title}
-        onClose={() => console.log('hi')}
-      >
-        {section.content}
-      </Dropdown>
-    ))
+    if (this.state.current !== -1) {
+      const section = this.props.sections[this.state.current]
+      return (
+        <Dropdown
+          heading={section.title}
+          onClose={() =>
+            this.setState({
+              current: -1,
+            })
+          }
+        >
+          {section.content}
+        </Dropdown>
+      )
+    }
+    return undefined
   }
 
   render() {
     return (
       <div
         className={css`
-          /* background-color: black; */
           width: 90%;
           margin: 0 auto;
           color: black;

@@ -19,6 +19,7 @@ class Dropdown extends React.Component<DropdownProps> {
           width: 100%;
           background-color: white;
           transition: all linear 0.3s;
+          margin-top: 4rem;
         `}
       >
         <div

@@ -10,7 +10,7 @@ import {
   XPosition,
   YPosition,
   Header,
-} from '../../../lux/src'
+} from '@dailybruin/lux'
 import SubHeader from '../components/SubHeader'
 import DropdownCarousel from '../components/DropdownCarousel'
 import Doughnut from '../components/Doughnut'
@@ -173,11 +173,21 @@ const IndexPage = ({ data }) => {
         imageURL={data.article.coverphoto}
         xPosition={XPosition.Right}
         yPosition={YPosition.Center}
+        textColor={colors.blue}
         style={css`
-          color: ${colors.blue};
+          > div {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-right: 0;
+            padding: 1rem;
+            padding-right: 3rem;
+            border-radius: 32px 0 0 32px;
+            border: 4px solid #b4c9f7;
+            border-right: 0;
+          }
         `}
       />
       <Article
+        dropcap={true}
         content={data.article.content}
         customTypeComponentMapping={{ subheading: SubHeader }}
       />
