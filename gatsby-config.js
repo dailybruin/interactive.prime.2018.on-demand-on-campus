@@ -12,7 +12,7 @@ const url = `https://features.dailybruin.com/${year}/${slugify(
 
 module.exports = {
   siteMetadata: {
-    siteName,
+    siteName: 'Daily Bruin PRIME | ' + siteName,
     description,
     url,
     image,

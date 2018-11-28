@@ -24,6 +24,7 @@ export const query = graphql`
         siteName
         description
         url
+        image
       }
     }
     article: kerckhoffArticle(title: { eq: "article.aml" }) {
