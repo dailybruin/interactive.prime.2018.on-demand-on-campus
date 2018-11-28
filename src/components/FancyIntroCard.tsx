@@ -19,6 +19,7 @@ const FancyIntroCard = (props: FancyIntroCardProps) => (
       );
       padding: 0.3rem;
       margin: 0 1rem;
+      text-align: center;
     `}
     onClick={props.onClick}
   >
@@ -26,26 +27,21 @@ const FancyIntroCard = (props: FancyIntroCardProps) => (
       className={css`
         background-color: white;
         border-radius: 0.8rem;
-        padding: 1.5rem;
+        padding: 1rem;
       `}
     >
-      <div
+      <h1
         className={css`
           text-align: center;
           color: lightgray;
-          font-size: 1.5rem;
-          font-family: Arial;
+          font-weight: bold;
+          margin-bottom: 0px;
+          font-family: 'heebo';
         `}
       >
         {props.title}
-      </div>
-      <div
-        className={css`
-          font-family: Arial;
-        `}
-      >
-        {props.caption}
-      </div>
+      </h1>
+      <div>{props.caption}</div>
     </div>
   </div>
 )

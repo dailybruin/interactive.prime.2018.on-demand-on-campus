@@ -2,3 +2,23 @@
 .slick-next:before {
   color: #616fa1 !important;
 }
+.slick-track {
+  height: 180px;
+}
+.slick-track {
+  display: flex;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.slick-slide {
+  height: calc(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-slide > div:first-child {
+  height: 100%;
+}

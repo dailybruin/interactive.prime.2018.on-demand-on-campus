@@ -17,6 +17,7 @@ const FancyCard = (props: FancyCardProps) => (
       border-radius: 1.5rem;
       margin: 0 1rem;
       ${props.isSelected ? 'border: 5px #E9EEFF solid;' : ''};
+      height: 170px;
     `}
   >
     <div
@@ -28,29 +29,34 @@ const FancyCard = (props: FancyCardProps) => (
         border-radius: 1rem;
         padding: 1.5rem;
         padding: 0.4rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       `}
       onClick={props.onClick}
     >
-      <div
-        className={css`
-          margin: 0 0 auto auto;
-          color: white;
-          font-family: Arial;
-          text-align: right;
-          font-size: 1.2rem;
-          font-weight: bold;
-          max-width: 200px;
-        `}
-      >
-        {props.title}
+      <div>
+        <div
+          className={css`
+            margin: 0 0 auto auto;
+            color: white;
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: bold;
+            max-width: 200px;
+          `}
+        >
+          {props.title}
+        </div>
+        <img
+          className={css`
+            margin-bottom: 0;
+            opacity: 0.5;
+          `}
+          src={WaveImage}
+        />
       </div>
-      <img
-        className={css`
-          margin-bottom: 0;
-          opacity: 0.5;
-        `}
-        src={WaveImage}
-      />
     </div>
   </div>
 )

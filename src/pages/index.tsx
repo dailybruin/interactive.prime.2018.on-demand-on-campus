@@ -95,7 +95,13 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <div className={css`li { display: none; }`}>
+    <div
+      className={css`
+        li {
+          display: none;
+        }
+      `}
+    >
       <Head {...data.site.siteMetadata} />
       <Header
         title="On Demand On Campus"
@@ -169,10 +175,10 @@ const IndexPage = ({ data }) => {
         ]}
       />
       <HoverCoverPhoto
-        headline={ data.article.headline }
-        baseImageURL={ data.article.coverphoto }
+        headline={data.article.headline}
+        baseImageURL={data.article.coverphoto}
         hoverImageURL="https://assets.dailybruin.com/images/interactive.prime.2018.bruin-binging2/prime.illo.JLS-21f91159663efc996d1a2d951c1032ef.png"
-        authors={ data.article.author }
+        authors={data.article.author}
       />
       {/* <div className={css`
         div:hover div {
@@ -206,9 +212,25 @@ const IndexPage = ({ data }) => {
         dropcap={true}
         content={data.article.content}
         customTypeComponentMapping={{ subheading: SubHeader }}
+        style={css`
+          p:nth-of-type(1),
+          p:nth-of-type(2) {
+            @media screen and (min-width: 1050px) {
+              display: none;
+            }
+          }
+        `}
       />
       <Footer
-        developers={['Nathan Smith', 'Kevin Qian']}
+        developers={[
+          'Nathan Smith',
+          'Kevin Qian',
+          'Richard Yang',
+          'Mindi Cao',
+          'Max Wu',
+          'Karl Huang',
+          'Callista Wu',
+        ]}
         copyrightYear={2018}
       />
     </div>
