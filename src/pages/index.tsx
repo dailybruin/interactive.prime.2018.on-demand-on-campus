@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { css } from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import colors from '../global/colors'
 import {
   Article,
@@ -9,11 +9,13 @@ import {
   Head,
   XPosition,
   YPosition,
-} from '@dailybruin/lux'
+  Header,
+} from '../../../lux/src'
 import SubHeader from '../components/SubHeader'
 import DropdownCarousel from '../components/DropdownCarousel'
 import Doughnut from '../components/Doughnut'
 import HorizontalBar from '../components/HorizontalBar'
+import { darken } from 'polished'
 
 export const query = graphql`
   query IndexQuery {
@@ -68,6 +70,14 @@ export const query = graphql`
   }
 `
 
+const NavbarLink = styled('a')`
+  text-decoration: none;
+  color: ${colors.blue};
+  :hover {
+    color: ${darken(0.2, colors.blue)} !important;
+  }
+`
+
 const IndexPage = ({ data }) => {
   const chartData = {}
   Object.keys(data.data).forEach(key => {
@@ -81,11 +91,31 @@ const IndexPage = ({ data }) => {
       ],
     }
   })
-  console.log(chartData)
 
   return (
     <div>
       <Head {...data.site.siteMetadata} />
+      <Header
+        title="On Demand On Campus"
+        links={[
+          <NavbarLink href="#Rise-of-Streaming">Rise of Streaming</NavbarLink>,
+          <NavbarLink href="#Bruin-Binging">Bruin Binging</NavbarLink>,
+          <NavbarLink href="#Social-Streaming">Social Streaming</NavbarLink>,
+          <NavbarLink href="#Cutting-the-Cords">Cutting the Cords</NavbarLink>,
+        ]}
+        style={css`
+          border: 3px solid ${colors.blue};
+          border-radius: 32px;
+          text-transform: uppercase;
+          color: ${colors.blue};
+          margin: 2rem 2rem 4rem;
+          width: auto;
+          padding: 1rem;
+          h2 {
+            margin: 0;
+          }
+        `}
+      />
       <DropdownCarousel
         intro={'STATISTICS'}
         introCaption={
