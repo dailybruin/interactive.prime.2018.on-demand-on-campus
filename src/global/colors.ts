@@ -1,5 +1,5 @@
 const colors = {
-  blue: '#A0B2D8',
+  blue: '#616FA1',
 }
 
 export default colors
