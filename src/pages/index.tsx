@@ -182,7 +182,7 @@ const IndexPage = ({ data }) => {
             padding: 1rem;
             padding-right: 3rem;
             border-radius: 32px 0 0 32px;
-            border: 4px solid #b4c9f7;
+            border: 4px solid ${colors.blue};
             border-right: 0;
           }
         `}
