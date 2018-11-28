@@ -810,11 +810,14 @@
     node-fetch "^2.2.0"
     typescript "^3.1.4"
 
-"@dailybruin/lux@1.8.2":
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/@dailybruin/lux/-/lux-1.8.2.tgz#acf44fa2ff3f305216fc17000c041dd77d5f7dd9"
-  integrity sha512-Hsj7dPg4DAbwX3xq4RO8xU9g/iylqUVALtjPURn7pf/P81DolfGsTRxcqYdrWEfK12BDDFvdb3N32I67KX2jGQ==
+"@dailybruin/lux@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@dailybruin/lux/-/lux-1.9.0.tgz#3aa9ad5094a0613114f2b1b610f8e4a6c048b448"
+  integrity sha512-KbtX1kH1pzNMLwPL/8z4D1KY3bmbRc4xhBDeQJbBfOZoV7me5q4HNv/TxukYladfnpH911ONZAOJASN8UGtA6A==
   dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.8"
+    "@fortawesome/free-solid-svg-icons" "^5.5.0"
+    "@fortawesome/react-fontawesome" "^0.1.3"
     emotion "^9.2.12"
     emotion-server "^9.2.12"
     gatsby-plugin-emotion "^2.0.6"
