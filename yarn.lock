@@ -810,10 +810,10 @@
     node-fetch "^2.2.0"
     typescript "^3.1.4"
 
-"@dailybruin/lux@1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@dailybruin/lux/-/lux-1.9.1.tgz#ff328862ac6f30881e873bd95a4a505b2a3ea646"
-  integrity sha512-x+HgDUEc7Hbm8xjEtLoivUwBEGpeUgAn0xn0AxjO3BlzJPrgSYIN8F6tZQ/IZnzZCX/o0C4X+fv3Kp+9rF8fQQ==
+"@dailybruin/lux@1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@dailybruin/lux/-/lux-1.9.2.tgz#f172d180841a77d4c6a688614eb3d99d958f9a88"
+  integrity sha512-Vo2hC6xZDqKlc+eUoTL7q0I8SJZi5QdWGQk6GrNzjR0hun1TYx1BoAfbinXYOvdCenH+oGogiJz1MWjVB4c8fQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.8"
     "@fortawesome/free-solid-svg-icons" "^5.5.0"
