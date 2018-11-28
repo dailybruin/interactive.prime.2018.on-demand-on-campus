@@ -1,12 +1,14 @@
 const slugify = require('slugify')
 
-const siteName = 'on-demand-on-campus'
+const siteName = 'On Demand On Campus'
 const description = 'SITE_DESCRIPTION'
 const image =
-  'https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg'
+  'https://assets.dailybruin.com/images/interactive.prime.2018.bruin-binging2/prime.illo_1.JLS-ae3b8b3037a04298e2b2f623e1a050f6.png'
 const year = '2018'
 
-const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
+const url = `https://features.dailybruin.com/${year}/${slugify(
+  siteName.toLowerCase()
+)}`
 
 module.exports = {
   siteMetadata: {
