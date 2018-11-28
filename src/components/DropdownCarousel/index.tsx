@@ -80,7 +80,7 @@ export default class DropdownCarousel extends React.Component<
         `}
       >
         <Slider
-          dots={true}
+          dots={false}
           slidesToShow={3}
           slidesToScroll={1}
           infinite={false}

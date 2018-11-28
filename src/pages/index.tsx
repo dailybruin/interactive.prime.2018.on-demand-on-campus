@@ -9,7 +9,6 @@ import {
   XPosition,
   YPosition,
   Header,
-  Headline,
 } from '@dailybruin/lux'
 import HoverCoverPhoto from '../components/HoverCoverPhoto'
 import SubHeader from '../components/SubHeader'
@@ -95,16 +94,11 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <div
-      className={css`
-        li {
-          display: none;
-        }
-      `}
-    >
+    <div className={css``}>
       <Head {...data.site.siteMetadata} />
       <Header
         title="On Demand On Campus"
+        sticky={true}
         links={[
           <NavbarLink href="#Rise-of-Streaming">Rise of Streaming</NavbarLink>,
           <NavbarLink href="#Bruin-Binging">Bruin Binging</NavbarLink>,
@@ -122,6 +116,8 @@ const IndexPage = ({ data }) => {
           h2 {
             margin: 0;
           }
+          z-index: 100;
+          top: 1rem;
         `}
       />
       <DropdownCarousel
