@@ -47,6 +47,6 @@
     "typography": "0.16.17"
   },
   "devDependencies": {
-    "prettier": "1.15.2"
+    "prettier": "1.19.1"
   }
 }
